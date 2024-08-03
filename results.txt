@@ -1,0 +1,70 @@
+-O3 
+gcc -Wall -Wpedantic -Wextra -std=c17 -march=haswell -O3 timing.c lab13.S -o timing
+matrices function calculated in 30 cycles.
+matrices_Optimized function calculated in 26 cycles.
+matrices_double function calculated in 280 cycles.
+matrices_double_stack function calculated in 42 cycles.
+matrices function calculated in 1.659e-06 s.
+matrices_Optimized function calculated in 1.095e-06 s.
+matrices_double function calculated in 1.094e-06 s.
+matrices_double_stack function calculated in 9.99e-07 s.
+
+-O2 
+gcc -Wall -Wpedantic -Wextra -std=c17 -march=haswell -O2 timing.c lab13.S -o timing
+matrices function calculated in 26 cycles.
+matrices_Optimized function calculated in 94 cycles.
+matrices_double function calculated in 236 cycles.
+matrices_double_stack function calculated in 28 cycles.
+matrices function calculated in 1.425e-06 s.
+matrices_Optimized function calculated in 9.06e-07 s.
+matrices_double function calculated in 8.69e-07 s.
+matrices_double_stack function calculated in 8.7e-07 s.
+
+
+-O1 
+gcc -Wall -Wpedantic -Wextra -std=c17 -march=haswell -O1 timing.c lab13.S -o timing
+matrices function calculated in 50 cycles.
+matrices_Optimized function calculated in 26 cycles.
+matrices_double function calculated in 392 cycles.
+matrices_double_stack function calculated in 402 cycles.
+matrices function calculated in 1.42e-06 s.
+matrices_Optimized function calculated in 1.068e-06 s.
+matrices_double function calculated in 1.036e-06 s.
+matrices_double_stack function calculated in 1.058e-06 s.
+
+No Optmization Flags
+gcc -Wall -Wpedantic -Wextra -std=c17 -march=haswell timing.c lab13.S -o timing
+matrices function calculated in 70 cycles.
+matrices_Optimized function calculated in 68 cycles.
+matrices_double function calculated in 28 cycles.
+matrices_double_stack function calculated in 32 cycles.
+matrices function calculated in 1.383e-06 s.
+matrices_Optimized function calculated in 9.17e-07 s.
+matrices_double function calculated in 8.38e-07 s.
+matrices_double_stack function calculated in 8.65e-07 s.
+
+Valgrind
+
+valgrind ./lab
+==17653== Memcheck, a memory error detector
+==17653== Copyright (C) 2002-2022, and GNU GPL'd, by Julian Seward et al.
+==17653== Using Valgrind-3.22.0 and LibVEX; rerun with -h for copyright info
+==17653== Command: ./lab
+==17653== 
+matrix1: 2.543431 1.234560 0.443412 3.333330 
+matrix2: 4.140300 2.300000 1.443940 5.211130 
+
+
+C Implementation Results: { 12.313198 12.283344 6.648987 18.390264 } 
+C Optimized Implementation Results: { 12.313198 12.283344 6.648987 18.390264 } 
+Assembly Double Results: { 12.313198 12.283344 6.648987 18.390264 } 
+Assembly Stack Double Results: { 12.313198 12.283344 6.648987 18.390264 } 
+==17653== 
+==17653== HEAP SUMMARY:
+==17653==     in use at exit: 0 bytes in 0 blocks
+==17653==   total heap usage: 1 allocs, 1 frees, 1,024 bytes allocated
+==17653== 
+==17653== All heap blocks were freed -- no leaks are possible
+==17653== 
+==17653== For lists of detected and suppressed errors, rerun with: -s
+==17653== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)

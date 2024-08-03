@@ -1,0 +1,6 @@
+gcc -Wall -Wpedantic -std=c17 -march=haswell lab13.S tests.c -O1 -o lab
+
+gcc -Wall -Wpedantic -Wextra -std=c17 -march=haswell -O3 timing.c lab13.S -o timing3 
+gcc -Wall -Wpedantic -Wextra -std=c17 -march=haswell -O2 timing.c lab13.S -o timing2 
+gcc -Wall -Wpedantic -Wextra -std=c17 -march=haswell -O1 timing.c lab13.S -o timing1 
+gcc -Wall -Wpedantic -Wextra -std=c17 -march=haswell timing.c lab13.S -o timing 
