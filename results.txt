@@ -1,3 +1,18 @@
+Results -O3 -O2 -O1 No Optimization
+
+
+matrix1: 2.543431 1.234560 0.443412 3.333330
+matrix2: 4.140300 2.300000 1.443940 5.211130
+
+
+C Implementation Results: { 12.313198 12.283344 6.648987 18.390264 }
+C Optimized Implementation Results: { 12.313198 12.283344 6.648987 18.390264 }
+Assembly Double Results: { 12.313198 12.283344 6.648987 18.390264 }
+Assembly Stack Double Results: { 12.313198 12.283344 6.648987 18.390264 }
+
+
+Run Time 
+
 -O3 
 gcc -Wall -Wpedantic -Wextra -std=c17 -march=haswell -O3 timing.c lab13.S -o timing
 matrices function calculated in 30 cycles.
@@ -68,3 +83,212 @@ Assembly Stack Double Results: { 12.313198 12.283344 6.648987 18.390264 }
 ==17653== 
 ==17653== For lists of detected and suppressed errors, rerun with: -s
 ==17653== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+
+Run Times - Big Numbers
+
+
+-O3 Flag 
+matrices function calculated in 26 cycles.
+matrices_Optimized function calculated in 64 cycles.
+matrices_double function calculated in 234 cycles.
+matrices_double_stack function calculated in 30 cycles.
+matrices function calculated in 1.6e-06 s.
+matrices_Optimized function calculated in 1.4e-06 s.
+matrices_double function calculated in 1.4e-06 s.
+matrices_double_stack function calculated in 1.4e-06 s.
+
+
+-O2 Flag 
+matrices function calculated in 24 cycles.
+matrices_Optimized function calculated in 26 cycles.
+matrices_double function calculated in 30 cycles.
+matrices_double_stack function calculated in 34 cycles.
+matrices function calculated in 1.6e-06 s.
+matrices_Optimized function calculated in 1.3e-06 s.
+matrices_double function calculated in 1.4e-06 s.
+matrices_double_stack function calculated in 1.3e-06 s.
+
+
+-O1 Flag 
+matrices function calculated in 40 cycles.
+matrices_Optimized function calculated in 26 cycles.
+matrices_double function calculated in 28 cycles.
+matrices_double_stack function calculated in 32 cycles.
+matrices function calculated in 1.5e-06 s.
+matrices_Optimized function calculated in 1.1e-06 s.
+matrices_double function calculated in 1.2e-06 s.
+matrices_double_stack function calculated in 1.1e-06 s.
+
+
+No Optimization Flag 
+matrices function calculated in 46 cycles.
+matrices_Optimized function calculated in 60 cycles.
+matrices_double function calculated in 30 cycles.
+matrices_double_stack function calculated in 116 cycles.
+matrices function calculated in 1.6e-06 s.
+matrices_Optimized function calculated in 1.4e-06 s.
+matrices_double function calculated in 1.4e-06 s.
+matrices_double_stack function calculated in 1.2e-06 s.
+
+Run Times - Small Numbers
+
+
+-O3 Flag 
+matrices function calculated in 24 cycles.
+matrices_Optimized function calculated in 26 cycles.
+matrices_double function calculated in 28 cycles.
+matrices_double_stack function calculated in 32 cycles.
+matrices function calculated in 1.4e-06 s.
+matrices_Optimized function calculated in 2e-06 s.
+matrices_double function calculated in 1.4e-06 s.
+matrices_double_stack function calculated in 1.4e-06 s.
+
+
+-O2 Flag 
+matrices function calculated in 26 cycles.
+matrices_Optimized function calculated in 26 cycles.
+matrices_double function calculated in 26 cycles.
+matrices_double_stack function calculated in 32 cycles.
+matrices function calculated in 1.5e-06 s.
+matrices_Optimized function calculated in 1.4e-06 s.
+matrices_double function calculated in 1.4e-06 s.
+matrices_double_stack function calculated in 1.3e-06 s.
+
+
+-O1 Flag 
+matrices function calculated in 50 cycles.
+matrices_Optimized function calculated in 26 cycles.
+matrices_double function calculated in 30 cycles.
+matrices_double_stack function calculated in 34 cycles.
+matrices function calculated in 1.5e-06 s.
+matrices_Optimized function calculated in 1.1e-06 s.
+matrices_double function calculated in 1.1e-06 s.
+matrices_double_stack function calculated in 1.1e-06 s.
+
+
+No Optimization Flag 
+matrices function calculated in 136 cycles.
+matrices_Optimized function calculated in 34 cycles.
+matrices_double function calculated in 32 cycles.
+matrices_double_stack function calculated in 32 cycles.
+matrices function calculated in 2e-06 s.
+matrices_Optimized function calculated in 1.5e-06 s.
+matrices_double function calculated in 1.1e-06 s.
+matrices_double_stack function calculated in 1.2e-06 s.
+
+
+Branch Misses 
+
+
+matrices 
+             6,593      cpu_core/branch-misses/          #    3.01% of all branches
+     <not counted>      cpu_atom/branch-misses/                                                 (0.00%)
+           219,040      cpu_core/branches/
+     <not counted>      cpu_atom/branches/                                                      (0.00%)
+
+       0.005860546 seconds time elapsed
+
+       0.001668000 seconds user
+       0.000000000 seconds sys
+
+
+matrices_Optimized
+             6,887      cpu_core/branch-misses/          #    3.15% of all branches
+     <not counted>      cpu_atom/branch-misses/                                                 (0.00%)
+           218,951      cpu_core/branches/
+     <not counted>      cpu_atom/branches/                                                      (0.00%)
+
+       0.004760435 seconds time elapsed
+
+       0.001786000 seconds user
+       0.000000000 seconds sys
+
+
+matrices_double
+             5,883      cpu_core/branch-misses/          #    2.70% of all branches
+     <not counted>      cpu_atom/branch-misses/                                                 (0.00%)
+           218,060      cpu_core/branches/
+     <not counted>      cpu_atom/branches/                                                      (0.00%)
+
+       0.004728840 seconds time elapsed
+
+       0.001887000 seconds user
+       0.000000000 seconds sys
+
+
+matrices_double_stack
+             6,568      cpu_core/branch-misses/          #    2.97% of all branches
+     <not counted>      cpu_atom/branch-misses/                                                 (0.00%)
+           220,838      cpu_core/branches/
+     <not counted>      cpu_atom/branches/                                                      (0.00%)
+
+       0.006502790 seconds time elapsed
+
+       0.000000000 seconds user
+       0.001775000 seconds sys
+
+
+Memory Locality 
+
+matrices
+             9,037      cpu_core/L1-dcache-load-misses/  #    3.09% of all L1-dcache accesses
+   <not supported>      cpu_atom/L1-dcache-load-misses/
+           292,666      cpu_core/L1-dcache-loads/
+     <not counted>      cpu_atom/L1-dcache-loads/                                               (0.00%)
+               313      cpu_core/LLC-load-misses/        #    9.21% of all L1-icache accesses
+     <not counted>      cpu_atom/LLC-load-misses/                                               (0.00%)
+             3,397      cpu_core/LLC-loads/
+     <not counted>      cpu_atom/LLC-loads/                                                     (0.00%)
+
+       0.004057910 seconds time elapsed
+
+       0.000000000 seconds user
+       0.002182000 seconds sys
+
+
+matrices_Optimized
+             8,280      cpu_core/L1-dcache-load-misses/  #    2.81% of all L1-dcache accesses
+   <not supported>      cpu_atom/L1-dcache-load-misses/
+           294,267      cpu_core/L1-dcache-loads/
+     <not counted>      cpu_atom/L1-dcache-loads/                                               (0.00%)
+               148      cpu_core/LLC-load-misses/        #    6.42% of all L1-icache accesses
+     <not counted>      cpu_atom/LLC-load-misses/                                               (0.00%)
+             2,305      cpu_core/LLC-loads/
+     <not counted>      cpu_atom/LLC-loads/                                                     (0.00%)
+
+       0.004158420 seconds time elapsed
+
+       0.000000000 seconds user
+       0.001717000 seconds sys
+
+
+matrices_double
+             6,839      cpu_core/L1-dcache-load-misses/  #    2.34% of all L1-dcache accesses
+   <not supported>      cpu_atom/L1-dcache-load-misses/
+           292,493      cpu_core/L1-dcache-loads/
+     <not counted>      cpu_atom/L1-dcache-loads/                                               (0.00%)
+             1,056      cpu_core/LLC-load-misses/        #   62.37% of all L1-icache accesses
+     <not counted>      cpu_atom/LLC-load-misses/                                               (0.00%)
+             1,693      cpu_core/LLC-loads/
+     <not counted>      cpu_atom/LLC-loads/                                                     (0.00%)
+
+       0.002349270 seconds time elapsed
+
+       0.000514000 seconds user
+       0.000000000 seconds sys
+
+
+matrices_double_stack
+             8,239      cpu_core/L1-dcache-load-misses/  #    2.78% of all L1-dcache accesses
+   <not supported>      cpu_atom/L1-dcache-load-misses/
+           296,762      cpu_core/L1-dcache-loads/
+     <not counted>      cpu_atom/L1-dcache-loads/                                               (0.00%)
+               303      cpu_core/LLC-load-misses/        #   14.25% of all L1-icache accesses
+     <not counted>      cpu_atom/LLC-load-misses/                                               (0.00%)
+             2,126      cpu_core/LLC-loads/
+     <not counted>      cpu_atom/LLC-loads/                                                     (0.00%)
+
+       0.003648902 seconds time elapsed
+
+       0.000000000 seconds user
+       0.001644000 seconds sys
